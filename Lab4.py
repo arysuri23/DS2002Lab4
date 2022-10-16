@@ -34,4 +34,5 @@ date = datetime.fromtimestamp(dateData['chart']['result'][0]['meta']['regularMar
 results = {"stockTicker":stockTicker, "fullStockName":fullName, "currentPrice":currPrice, "targetMeanPrice":targetMeanPrice, "cashOnHand":cashOnHand, "profitMargin":profMarg, "date":date}
 
 resultsJson = json.dumps(results)
-print(resultsJson)
+with open("results.json", "w") as outfile:
+    outfile.write(resultsJson)
